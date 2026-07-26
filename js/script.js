@@ -63,10 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Collaboration Form Handler (via Secure Cloudflare Worker Backend) ---
-  // Once deployed on Cloudflare, replace this URL with your active Worker domain:
-  // e.g. 'https://telegram-contact-bot.your-username.workers.dev'
-  const WORKER_ENDPOINT_URL = 'https://telegram-contact-bot.your-username.workers.dev';
+  // --- Collaboration Form Handler (via Vercel Serverless Function Backend) ---
+  const API_ENDPOINT_URL = '/api/contact';
 
   const collabForm = document.getElementById('collabForm');
   const submitCollabBtn = document.getElementById('submitCollabBtn');
@@ -84,15 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Demo feedback mode while waiting for live Cloudflare Worker URL to be configured
-      if (!WORKER_ENDPOINT_URL || WORKER_ENDPOINT_URL.includes('your-username.workers.dev')) {
-        console.log('--- Collab Form Submitted (Demo Mode) ---', { name, contact, message });
-        showToast('Message sent!');
-        collabForm.reset();
-        return;
-      }
-
-      // Send form payload securely to Cloudflare Worker backend
+      // Send form payload securely to Vercel Serverless backend
       const originalText = submitCollabBtn ? submitCollabBtn.innerHTML : '';
       if (submitCollabBtn) {
         submitCollabBtn.disabled = true;
@@ -100,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const response = await fetch(WORKER_ENDPOINT_URL, {
+        const response = await fetch(API_ENDPOINT_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
