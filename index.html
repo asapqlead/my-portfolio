@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Kalam:wght@400;600&family=Patrick+Hand&display=swap"
     rel="stylesheet">
 
   <!-- Font Awesome 6 Free for authentic professional icons -->
@@ -270,10 +270,19 @@
             <div class="proj-body">
               <div class="tag-row">
                 <span class="tag tag-ts">TypeScript</span>
-                <a href="https://stanza-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="tag tag-live"
-                  title="Visit Stanza Live Site">
-                  LIVE
-                </a>
+                <div class="live-tag-wrapper">
+                  <div class="live-annotation" aria-hidden="true">
+                    <span class="live-annotation-text">// tap to see the site</span>
+                    <svg class="live-annotation-arrow" width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 6 C 12 3, 20 4, 23 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17 13 L23 17 L27 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <a href="https://stanza-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="tag tag-live"
+                    title="Visit Stanza Live Site">
+                    LIVE
+                  </a>
+                </div>
               </div>
               <h3 class="proj-title">Stanza</h3>
               <p class="proj-desc">
