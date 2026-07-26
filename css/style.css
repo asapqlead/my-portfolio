@@ -853,7 +853,7 @@ a.tag-live:active {
     height: auto;
     z-index: 1000;
     overflow: visible !important;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .sidebar.nav-hidden-mobile {

@@ -121,27 +121,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Mobile Smart Navigation Bar (Hide on Scroll Down, Show on Scroll Up) ---
   const sidebar = document.getElementById('sidebar');
   let lastScrollTop = 0;
-  const scrollThreshold = 10;
 
   window.addEventListener('scroll', () => {
     if (window.innerWidth > 900 || !sidebar) return;
 
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Ignore small micro-movements or touch bounce
-    if (Math.abs(currentScrollTop - lastScrollTop) <= scrollThreshold) {
+    // Always reveal the navbar when near the top of the page
+    if (currentScrollTop < 50) {
+      sidebar.classList.remove('nav-hidden-mobile');
+      lastScrollTop = Math.max(0, currentScrollTop);
       return;
     }
 
-    if (currentScrollTop > lastScrollTop && currentScrollTop > (sidebar.offsetHeight || 100)) {
-      // Scrolling Down -> Hide Navbar
-      sidebar.classList.add('nav-hidden-mobile');
-    } else {
-      // Scrolling Up or Near Top -> Show Navbar
-      sidebar.classList.remove('nav-hidden-mobile');
-    }
+    const scrollDifference = currentScrollTop - lastScrollTop;
 
-    lastScrollTop = Math.max(0, currentScrollTop);
+    if (scrollDifference > 10 && currentScrollTop > (sidebar.offsetHeight || 100)) {
+      // Scrolling DOWN -> Hide Navbar
+      sidebar.classList.add('nav-hidden-mobile');
+      lastScrollTop = currentScrollTop;
+    } else if (scrollDifference < -50) {
+      // Scrolling UP deliberately by at least 50px -> Reveal Navbar
+      sidebar.classList.remove('nav-hidden-mobile');
+      lastScrollTop = currentScrollTop;
+    }
   }, { passive: true });
 
   // Ensure navbar resets when resizing back to desktop viewports
