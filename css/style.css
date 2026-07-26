@@ -833,14 +833,14 @@ a.tag-live:active {
 
   body,
   html {
-    overflow: auto;
-    height: auto;
+    overflow: visible !important;
+    height: auto !important;
   }
 
   .app-frame {
     flex-direction: column;
-    height: auto;
-    overflow: visible;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   .sidebar {
@@ -851,8 +851,13 @@ a.tag-live:active {
     position: sticky;
     top: 0;
     height: auto;
-    z-index: 500;
-    overflow-y: visible;
+    z-index: 1000;
+    overflow: visible !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar.nav-hidden-mobile {
+    transform: translateY(-100%);
   }
 
   .brand {
@@ -867,8 +872,8 @@ a.tag-live:active {
 
   .main-content {
     padding: 30px 20px;
-    height: auto;
-    overflow: visible;
+    height: auto !important;
+    overflow: visible !important;
   }
 }
 
