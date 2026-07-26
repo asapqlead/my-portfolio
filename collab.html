@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Collab! — Chhom Alead</title>
+  <meta name="description"
+    content="Get in touch with Chhom Alead to discuss software development projects, job opportunities, and technical collaborations via Telegram bot.">
+
+  <!-- Google Fonts for precision typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Free for authentic professional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="app-frame">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h1 class="brand-title">PORTFOLIO</h1>
+      </div>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html#about-section" class="nav-item" data-target="about">
+          <i class="fa-regular fa-user nav-icon nav-icon-regular"></i>
+          <i class="fa-solid fa-user nav-icon nav-icon-solid"></i>
+          <span>About</span>
+        </a>
+        <a href="index.html#achievements-section" class="nav-item" data-target="achievements">
+          <i class="fa-regular fa-bookmark nav-icon nav-icon-regular"></i>
+          <i class="fa-solid fa-bookmark nav-icon nav-icon-solid"></i>
+          <span>Achievements</span>
+        </a>
+        <a href="index.html#projects-section" class="nav-item" data-target="projects">
+          <i class="fa-regular fa-folder-open nav-icon nav-icon-regular"></i>
+          <i class="fa-solid fa-folder-open nav-icon nav-icon-solid"></i>
+          <span>Projects</span>
+        </a>
+        <a href="collab.html" class="nav-item active" data-target="collab">
+          <i class="fa-regular fa-comment nav-icon nav-icon-regular"></i>
+          <i class="fa-solid fa-comment nav-icon nav-icon-solid"></i>
+          <span>Let's collab!</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainContent">
+      <div class="collab-container">
+        <!-- Small box with the exact same style & color as the About card -->
+        <div class="card card-about card-collab">
+          <div class="collab-header-row">
+            <div class="icon-square" style="background-color: #FFFFFF;">
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <div class="collab-title-wrap">
+              <h2 class="user-name" style="margin-bottom: 2px;">Let's Collab!</h2>
+              <p class="collab-subtitle">Fill in your details to send a direct message to me via my Telegram Bot.</p>
+            </div>
+          </div>
+
+          <form id="collabForm" class="collab-form">
+            <div class="form-group">
+              <label for="senderName" class="form-label">YOUR NAME / COMPANY</label>
+              <input type="text" id="senderName" class="neobrutal-input" placeholder="e.g. John Doe / Khmer Enterprise" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderContact" class="form-label">CONTACT INFO (TELEGRAM OR EMAIL)</label>
+              <input type="text" id="senderContact" class="neobrutal-input" placeholder="e.g. @johndoe or john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderMessage" class="form-label">PROJECT / COLLABORATION IDEA</label>
+              <textarea id="senderMessage" class="neobrutal-input neobrutal-textarea" rows="5" placeholder="Tell me about your software project, job opportunity, or collaboration idea..." required></textarea>
+            </div>
+
+            <!-- Button using exact behavior from About page -->
+            <button type="submit" class="btn-resume btn-collab" id="submitCollabBtn">
+              <i class="fa-solid fa-bolt" style="margin-right: 8px;"></i> Send via Telegram Bot
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Interactive Toast Notification Modal/Popup -->
+  <div id="toast" class="toast hidden">
+    <div class="toast-content">
+      <span id="toastMessage">Action triggered!</span>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

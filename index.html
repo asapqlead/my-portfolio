@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chhom Alead — Software Development Student & Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Chhom Alead, Software Development student at American University of Phnom Penh with a track record of building projects across web development, AI integration, IoT, and productivity tools.">
+
+  <!-- Google Fonts for precision typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Free for authentic professional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="app-frame">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h1 class="brand-title">PORTFOLIO</h1>
+      </div>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="#about-section" class="nav-item active" data-target="about">
+          <!-- Regular (Outline) Icon -->
+          <i class="fa-regular fa-user nav-icon nav-icon-regular"></i>
+          <!-- Solid Icon -->
+          <i class="fa-solid fa-user nav-icon nav-icon-solid"></i>
+          <span>About</span>
+        </a>
+        <a href="#achievements-section" class="nav-item" data-target="achievements">
+          <!-- Regular (Outline) Icon -->
+          <i class="fa-regular fa-bookmark nav-icon nav-icon-regular"></i>
+          <!-- Solid Icon -->
+          <i class="fa-solid fa-bookmark nav-icon nav-icon-solid"></i>
+          <span>Achievements</span>
+        </a>
+        <a href="#projects-section" class="nav-item" data-target="projects">
+          <!-- Regular (Outline) Icon -->
+          <i class="fa-regular fa-folder-open nav-icon nav-icon-regular"></i>
+          <!-- Solid Icon -->
+          <i class="fa-solid fa-folder-open nav-icon nav-icon-solid"></i>
+          <span>Projects</span>
+        </a>
+        <a href="collab.html" class="nav-item" data-target="collab">
+          <!-- Regular (Outline) Icon -->
+          <i class="fa-regular fa-comment nav-icon nav-icon-regular"></i>
+          <!-- Solid Icon -->
+          <i class="fa-solid fa-comment nav-icon nav-icon-solid"></i>
+          <span>Let's collab!</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainContent">
+
+      <!-- TOP ROW: ABOUT & SKILLS -->
+      <section class="section-row top-row" id="about-section">
+        <!-- About Column -->
+        <div class="col-about">
+          <h2 class="section-title">About</h2>
+          <div class="card card-about">
+            <div class="about-header">
+              <!-- Profile picture -->
+              <div class="profile-placeholder-box" id="profileBox" title="Chhom Alead">
+                <div class="placeholder-content">
+                  <img id="profileImage" src="assets/profile.png" alt="Chhom Alead" style="display: block;">
+                </div>
+              </div>
+
+              <!-- User Details & Stats -->
+              <div class="about-details">
+                <div class="details-top">
+                  <div class="name-email-wrap">
+                    <h3 class="user-name">Chhom Alead</h3>
+                    <a href="mailto:chhomalead@gmail.com" class="user-email">chhomalead@gmail.com</a>
+                  </div>
+                  <div class="social-icons">
+                    <a href="https://github.com/asapqlead" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      aria-label="GitHub">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alead-chhom/" target="_blank" rel="noopener noreferrer"
+                      class="social-btn" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/asapqlead/" target="_blank" rel="noopener noreferrer"
+                      class="social-btn" aria-label="Instagram">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Stats boxes row -->
+                <div class="stats-row">
+                  <div class="stat-box">
+                    <div class="stat-val">08</div>
+                    <div class="stat-label">projects</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-val">03 yr</div>
+                    <div class="stat-label">coding</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-val">Open</div>
+                    <div class="stat-label">for work</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bio Description -->
+            <p class="about-bio">
+              Third-year Software Development student at American University of Phnom Penh with a track record of
+              independently building and shipping projects across web development, AI integration, IoT, and productivity
+              tools. Competed in Ideathon Cambodia twice and reached the finalist stage at Youth to Business by Khmer
+              Enterprise.
+            </p>
+
+            <!-- Action Button -->
+            <button class="btn-resume" id="resumeBtn">My resume</button>
+          </div>
+        </div>
+
+        <!-- Skills Column -->
+        <div class="col-skills">
+          <h2 class="section-title">Skills</h2>
+          <div class="skills-list">
+            <!-- Technical Skills -->
+            <div class="card card-item skill-card">
+              <div class="icon-square">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="card-item-info">
+                <h4 class="item-title">Technical Skills</h4>
+                <p class="item-sub">Core programming languages &amp; web frameworks</p>
+                <div class="skill-tags-wrap">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Bootstrap</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="card card-item skill-card">
+              <div class="icon-square">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <div class="card-item-info">
+                <h4 class="item-title">Tools &amp; Platforms</h4>
+                <p class="item-sub">Development environments, version control &amp; systems</p>
+                <div class="skill-tags-wrap">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">GitHub</span>
+                  <span class="skill-tag">VS Code</span>
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Cisco Packet Tracer</span>
+                  <span class="skill-tag">VMware Workstation</span>
+                  <span class="skill-tag">Thonny</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MIDDLE ROW: EDUCATION & ACHIEVEMENTS -->
+      <section class="section-row middle-row" id="achievements-section">
+        <h2 class="section-title">Education &amp; Achievements</h2>
+        <div class="grid-3">
+          <!-- Item 1: Education -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">B.Sc. Software Development</h4>
+              <p class="item-sub">American University of Phnom Penh</p>
+              <span class="item-date">Jan 2024 – Present</span>
+            </div>
+          </div>
+
+          <!-- Item 2: AWS Certification -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">AWS Academy Cloud Foundations</h4>
+              <p class="item-sub">Amazon Web Services Academy</p>
+              <span class="item-date">Completed • Dec 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Youth to Business Finalist -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">Finalist in Youth to Business</h4>
+              <p class="item-sub">Organized by Khmer Enterprise</p>
+              <span class="item-date">Finalist Stage • Nov 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Ideathon Season 4 -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">Ideathon Cambodia Season 4</h4>
+              <p class="item-sub">Organized by MARS FLAG</p>
+              <span class="item-date">Participant • Sep 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Ideathon Season 3 -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-puzzle-piece"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">Ideathon Cambodia Season 3</h4>
+              <p class="item-sub">Organized by MARS FLAG</p>
+              <span class="item-date">Selected Participant • Sep 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 6: National Exam Grade A -->
+          <div class="card card-item edu-card">
+            <div class="icon-square">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="card-item-info">
+              <h4 class="item-title">National Exam Grade A</h4>
+              <p class="item-sub">High School Graduation National Examination</p>
+              <span class="item-date">Achieved Grade A • Nov 2023</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTTOM ROW: PERSONAL PROJECTS -->
+      <section class="section-row bottom-row" id="projects-section">
+        <h2 class="section-title">Personal projects</h2>
+        <div class="grid-3">
+          <!-- Project 1 -->
+          <div class="card card-proj">
+            <div class="proj-body">
+              <div class="tag-row">
+                <span class="tag tag-ts">TypeScript</span>
+                <a href="https://stanza-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="tag tag-live"
+                  title="Visit Stanza Live Site">
+                  LIVE
+                </a>
+              </div>
+              <h3 class="proj-title">Stanza</h3>
+              <p class="proj-desc">
+                Daily planner PWA that organizes tasks into swipeable, folder-style stacks with real-time sync.
+              </p>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/asapqlead/stanza" target="_blank" rel="noopener noreferrer"
+                class="proj-link">asapqlead/stanza</a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="card card-proj">
+            <div class="proj-body">
+              <div class="tag-row">
+                <span class="tag tag-ts">TypeScript</span>
+                <a href="https://zolo-eta.vercel.app" target="_blank" rel="noopener noreferrer" class="tag tag-live"
+                  title="Visit Zolo Live Site">
+                  LIVE
+                </a>
+              </div>
+              <h3 class="proj-title">Zolo</h3>
+              <p class="proj-desc">
+                Gamified productivity PWA — complete tasks and earn points, no backend required.
+              </p>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/asapqlead/zolo" target="_blank" rel="noopener noreferrer"
+                class="proj-link">asapqlead/zolo</a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="card card-proj">
+            <div class="proj-body">
+              <div class="tag-row">
+                <span class="tag tag-py">Python</span>
+                <a href="https://synctype-frontend.vercel.app" target="_blank" rel="noopener noreferrer"
+                  class="tag tag-live" title="Visit SyncType Live Site">
+                  LIVE
+                </a>
+              </div>
+              <h3 class="proj-title">SyncType</h3>
+              <p class="proj-desc">
+                Converts Khmer phonetic slang typed in Latin letters into proper Khmer script.
+              </p>
+            </div>
+            <div class="proj-footer">
+              <a href="https://github.com/asapqlead/SyncType" target="_blank" rel="noopener noreferrer"
+                class="proj-link">asapqlead/SyncType</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Interactive Toast Notification Modal/Popup -->
+  <div id="toast" class="toast hidden">
+    <div class="toast-content">
+      <span id="toastMessage">Action triggered!</span>
+    </div>
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
