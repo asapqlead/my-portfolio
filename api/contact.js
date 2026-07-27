@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     // Sanitize user inputs to prevent Telegram API HTML syntax errors
     const safeName = escapeHTML(name);
     const safeContact = escapeHTML(contact);
-    const safeSubject = escapeHTML(subject || 'Portfolio Collaboration Inquiry');
+    const safeSubject = escapeHTML(subject);
     const safeMessage = escapeHTML(message);
 
     // Generate formatted timestamp (GMT+7 Phnom Penh time)
