@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     const safeMessage = escapeHTML(message);
 
     // Construct formatted Telegram message payload
-    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n👤 <b>Name:</b> ${safeName}\n🔗 <b>Contact:</b> ${safeContact}\n💬 <b>Message:</b>\n\n${safeMessage}`;
+    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n<b>Name:</b> ${safeName}\n<b>Contact:</b> ${safeContact}\n<b>Message:</b>\n${safeMessage}`;
 
     // Send payload securely server-to-server to Telegram API
     const telegramResponse = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
