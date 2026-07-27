@@ -816,6 +816,65 @@ a.tag-live:active {
 }
 
 /* ==========================================================================
+   SITE FOOTER
+   ========================================================================== */
+.site-footer {
+  margin-top: 20px;
+  padding-top: 28px;
+  border-top: var(--border-width-main) solid var(--border-color);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: #444444;
+}
+
+.footer-copy strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.footer-divider {
+  font-family: var(--font-mono);
+  color: #888888;
+  font-size: 12px;
+}
+
+/* ==========================================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media screen and (max-width: 1200px) {
@@ -909,5 +968,12 @@ a.tag-live:active {
 
   .card-collab {
     padding: 24px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
   }
 }
