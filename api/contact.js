@@ -8,8 +8,21 @@
  * - TELEGRAM_CHAT_ID: Target Telegram Chat ID (e.g., 1099543504)
  */
 
+function escapeHTML(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 export default async function handler(req, res) {
-  // Handle CORS & Preflight (in case you ever test across ports or origins)
+  // Set CORS headers for local/cross-origin testing
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle CORS & Preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -37,8 +50,13 @@ export default async function handler(req, res) {
       });
     }
 
+    // Sanitize user inputs to prevent Telegram API HTML syntax errors
+    const safeName = escapeHTML(name);
+    const safeContact = escapeHTML(contact);
+    const safeMessage = escapeHTML(message);
+
     // Construct formatted Telegram message payload
-    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n👤 <b>Name:</b> ${name}\n🔗 <b>Contact:</b> ${contact}\n💬 <b>Message:</b>\n\n${message}`;
+    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n👤 <b>Name:</b> ${safeName}\n🔗 <b>Contact:</b> ${safeContact}\n💬 <b>Message:</b>\n\n${safeMessage}`;
 
     // Send payload securely server-to-server to Telegram API
     const telegramResponse = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

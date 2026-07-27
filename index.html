@@ -56,7 +56,7 @@
           <i class="fa-solid fa-folder-open nav-icon nav-icon-solid"></i>
           <span>Projects</span>
         </a>
-        <a href="collab.html" class="nav-item" data-target="collab">
+        <a href="#collab-section" class="nav-item" data-target="collab">
           <!-- Regular (Outline) Icon -->
           <i class="fa-regular fa-comment nav-icon nav-icon-regular"></i>
           <!-- Solid Icon -->
@@ -103,6 +103,10 @@
                       class="social-btn" aria-label="Instagram">
                       <i class="fa-brands fa-instagram"></i>
                     </a>
+                    <a href="https://t.me/asapqlead" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      aria-label="Telegram">
+                      <i class="fa-brands fa-telegram"></i>
+                    </a>
                   </div>
                 </div>
 
@@ -127,7 +131,7 @@
             <!-- Bio Description -->
             <p class="about-bio">
               Hi there! I am Alead. A third-year Software Development student at American University of Phnom Penh who
-              passionate about building and shipping projects across web development, AI integration, IoT, and
+              is passionate about building and shipping projects across web development, AI integration, IoT, and
               productivity
               tools. Currently based in Phnom Penh, Cambodia.
             </p>
@@ -338,6 +342,52 @@
               <a href="https://github.com/asapqlead/SyncType" target="_blank" rel="noopener noreferrer"
                 class="proj-link">asapqlead/SyncType</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLLABORATION / CONTACT SECTION -->
+      <section class="section-row collab-section-row" id="collab-section">
+        <h2 class="section-title">Let's collab!</h2>
+        <div class="collab-container">
+          <!-- Small box with the exact same style & color as the About card -->
+          <div class="card card-about card-collab">
+            <div class="collab-header-row">
+              <div class="icon-square" style="background-color: #FFFFFF;">
+                <i class="fa-solid fa-paper-plane"></i>
+              </div>
+              <div class="collab-title-wrap">
+                <h3 class="user-name" style="margin-bottom: 2px;">Get in Touch</h3>
+                <p class="collab-subtitle">Got an idea brewing? Let's build it. Send a quick message here and let's
+                  collab.</p>
+              </div>
+            </div>
+
+            <form id="collabForm" class="collab-form">
+              <div class="form-group">
+                <label for="senderName" class="form-label">YOUR NAME / COMPANY</label>
+                <input type="text" id="senderName" class="neobrutal-input"
+                  placeholder="e.g. John Doe / Khmer Enterprise" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderContact" class="form-label">CONTACT INFO (TELEGRAM OR EMAIL)</label>
+                <input type="text" id="senderContact" class="neobrutal-input"
+                  placeholder="e.g. @johndoe or john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">PROJECT / COLLABORATION IDEA</label>
+                <textarea id="senderMessage" class="neobrutal-input neobrutal-textarea" rows="5"
+                  placeholder="Tell me about your software project, job opportunity, or collaboration idea..."
+                  required></textarea>
+              </div>
+
+              <!-- Button using exact behavior from About page -->
+              <button type="submit" class="btn-resume btn-collab" id="submitCollabBtn">
+                Send via Telegram Bot
+              </button>
+            </form>
           </div>
         </div>
       </section>

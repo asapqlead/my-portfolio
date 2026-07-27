@@ -4,22 +4,86 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Navigation & Section Highlight ---
+  // --- Navigation & Scroll Spy Highlight ---
   const navItems = document.querySelectorAll('.nav-item');
   const mainContent = document.getElementById('mainContent');
+  const sectionsData = [];
 
   navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
+    const href = item.getAttribute('href');
+    if (href && href.includes('#')) {
+      const targetId = href.substring(href.indexOf('#'));
+      const sectionElem = document.querySelector(targetId);
+      if (sectionElem) {
+        sectionsData.push({ navItem: item, section: sectionElem });
+      }
+    }
+
+    item.addEventListener('click', () => {
       // Remove active class from all navigation items
       navItems.forEach(nav => nav.classList.remove('active'));
       // Add active class to clicked item
       item.classList.add('active');
 
       // Optional: Show toast notification for interactive feel
-      const sectionName = item.querySelector('span').innerText;
-      showToast(`Navigated to ${sectionName}`);
+      const spanElem = item.querySelector('span');
+      if (spanElem && typeof showToast === 'function') {
+        showToast(`Navigated to ${spanElem.innerText}`);
+      }
     });
   });
+
+  function updateActiveSection() {
+    if (sectionsData.length === 0) return;
+
+    // Detect whether desktop container (mainContent) or window/document is scrolling
+    const isDesktop = window.innerWidth > 900 && mainContent && mainContent.scrollHeight > mainContent.clientHeight;
+    const scrollTop = isDesktop ? mainContent.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+    const scrollHeight = isDesktop ? mainContent.scrollHeight : document.documentElement.scrollHeight;
+    const clientHeight = isDesktop ? mainContent.clientHeight : window.innerHeight;
+
+    let activeIndex = -1;
+
+    // Check if scrolled to the absolute bottom of the scroll container
+    if (scrollTop + clientHeight >= scrollHeight - 10 && scrollHeight > clientHeight) {
+      activeIndex = sectionsData.length - 1;
+    } else {
+      // Trigger point around 35% down the visible viewport
+      const topOffset = isDesktop && mainContent ? mainContent.getBoundingClientRect().top : 0;
+      const triggerPoint = topOffset + (clientHeight * 0.35);
+
+      sectionsData.forEach((item, index) => {
+        const rect = item.section.getBoundingClientRect();
+        if (rect.top <= triggerPoint) {
+          activeIndex = index;
+        }
+      });
+    }
+
+    if (activeIndex === -1 && sectionsData.length > 0) {
+      activeIndex = 0; // Default to first section when near top
+    }
+
+    // Apply active state to navigation items
+    sectionsData.forEach((item, index) => {
+      if (index === activeIndex) {
+        if (!item.navItem.classList.contains('active')) {
+          navItems.forEach(nav => nav.classList.remove('active'));
+          item.navItem.classList.add('active');
+        }
+      } else {
+        item.navItem.classList.remove('active');
+      }
+    });
+  }
+
+  // Attach scroll spy listeners to both mainContent (desktop) and window (mobile)
+  if (mainContent) {
+    mainContent.addEventListener('scroll', updateActiveSection, { passive: true });
+  }
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection, { passive: true });
+  updateActiveSection();
 
 
   // --- Resume Button Interactive Feedback ---

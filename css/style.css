@@ -727,13 +727,13 @@ a.tag-live:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  min-height: auto;
   padding: 10px 0 30px;
 }
 
 .card-collab {
   width: 100%;
-  max-width: 580px;
+  max-width: 650px;
   background-color: var(--bg-about-card);
   padding: 34px 38px;
 }
