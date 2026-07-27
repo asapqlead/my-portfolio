@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, contact, message } = req.body || {};
+    const { name, contact, subject, message } = req.body || {};
 
     if (!name || !contact || !message) {
       return res.status(400).json({ error: 'Please complete all form fields.' });
@@ -53,10 +53,22 @@ export default async function handler(req, res) {
     // Sanitize user inputs to prevent Telegram API HTML syntax errors
     const safeName = escapeHTML(name);
     const safeContact = escapeHTML(contact);
+    const safeSubject = escapeHTML(subject || 'Portfolio Collaboration Inquiry');
     const safeMessage = escapeHTML(message);
 
+    // Generate formatted timestamp (GMT+7 Phnom Penh time)
+    const formattedDate = new Date().toLocaleString('en-US', {
+      timeZone: 'Asia/Phnom_Penh',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    }) + ' (GMT+7)';
+
     // Construct formatted Telegram message payload
-    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n<b>Name:</b> ${safeName}\n<b>Contact:</b> ${safeContact}\n<b>Message:</b>\n${safeMessage}`;
+    const textPayload = `🚀 <b>New Collab Request from Portfolio!</b>\n\n<b>Date:</b> ${formattedDate}\n<b>Subject:</b> ${safeSubject}\n\n<b>Name:</b> ${safeName}\n<b>Contact:</b> ${safeContact}\n<b>Message:</b>\n${safeMessage}`;
 
     // Send payload securely server-to-server to Telegram API
     const telegramResponse = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

@@ -139,9 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const name = document.getElementById('senderName').value.trim();
       const contact = document.getElementById('senderContact').value.trim();
+      const subjectInput = document.getElementById('senderSubject');
+      const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Collaboration Inquiry';
       const message = document.getElementById('senderMessage').value.trim();
 
-      if (!name || !contact || !message) {
+      if (!name || !contact || !subject || !message) {
         showToast('Please complete all form fields.');
         return;
       }
@@ -159,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ name, contact, message })
+          body: JSON.stringify({ name, contact, subject, message })
         });
 
         const data = await response.json().catch(() => ({}));
