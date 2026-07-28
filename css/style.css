@@ -14,6 +14,8 @@
   --color-tag-ts: #FAC23B;
   --color-tag-py: #759fb4;
   --color-tag-react: #61DAFB;
+  --color-tag-js: #F7DF1E;
+  --color-tag-html: #FF7D50;
   --color-tag-live: #B4E2C2;
 
   /* Borders & Shadows */
@@ -603,6 +605,14 @@ html {
 
 .tag-react {
   background-color: var(--color-tag-react);
+}
+
+.tag-js {
+  background-color: var(--color-tag-js);
+}
+
+.tag-html {
+  background-color: var(--color-tag-html);
 }
 
 .tag-live {
