@@ -13,6 +13,7 @@
   /* Tag & Accent Colors */
   --color-tag-ts: #FAC23B;
   --color-tag-py: #759fb4;
+  --color-tag-react: #61DAFB;
   --color-tag-live: #B4E2C2;
 
   /* Borders & Shadows */
@@ -598,6 +599,10 @@ html {
 
 .tag-py {
   background-color: var(--color-tag-py);
+}
+
+.tag-react {
+  background-color: var(--color-tag-react);
 }
 
 .tag-live {

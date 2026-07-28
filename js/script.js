@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (resumeBtn) {
     resumeBtn.addEventListener('click', () => {
       showToast('Opening Resume document...');
-      window.open('files/CHHOM_ALEAD_CV.pdf', '_blank');
+      window.open('files/CHHOM_ALEAD_RESUME.pdf', '_blank');
     });
   }
 
