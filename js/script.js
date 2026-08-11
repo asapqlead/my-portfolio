@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
-  // --- Smooth Card Click Effects ---
+  // --- Smooth Card Click Effects & Project Flip ---
   const cards = document.querySelectorAll('.card-proj, .card-item');
   cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -124,6 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     card.addEventListener('mouseleave', () => {
       card.style.zIndex = '1';
+    });
+  });
+
+  const projCards = document.querySelectorAll('.card-proj');
+  projCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Prevent flipping if a link, button, or the live annotation is clicked
+      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.live-annotation')) {
+        return;
+      }
+      card.classList.toggle('is-flipped');
     });
   });
 
