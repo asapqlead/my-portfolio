@@ -135,6 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       card.classList.toggle('is-flipped');
+
+      // Temporarily add mobile-tap class to simulate hover transformation on touch
+      card.classList.add('mobile-tap');
+      setTimeout(() => {
+        card.classList.remove('mobile-tap');
+      }, 700);
     });
   });
 
